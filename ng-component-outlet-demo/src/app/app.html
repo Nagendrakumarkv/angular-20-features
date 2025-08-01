@@ -1,0 +1,12 @@
+<h1>Dynamic Component Demo</h1>
+<button (click)="selectComponent('profile')">Show Profile</button>
+<button (click)="selectComponent('settings')">Show Settings</button>
+
+<ng-container
+  *ngComponentOutlet="
+    componentType();
+    inputs: componentInputs();
+    content: componentContent();
+    injector: componentInjector()
+  "
+></ng-container>
